@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title align="center">New Post</title>
 	<title><?php echo $title; ?></title>
+
 </head>
 <body>
 
 	<ol>
 
-   <?php foreach($list as $item): ?>
+  <?php foreach($query->result() as $row): ?>
 
-      <li>
+   <h3><?php echo $row->title ?></h3>
 
-         <?php echo $item; ?>
+   <p><?php echo $row->text ?></p>
 
-      </li>
+   <hr />
 
-   <?php endforeach; ?>
+<?php endforeach; ?>
 
 </ol>
 

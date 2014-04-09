@@ -9,7 +9,12 @@ class Blog extends CI_Controller {
 
       $data['list'] = array('first', 'second', 'third');
 
+      $data['query'] = $this->db->get('entries');
+
       $this->load->view('blog_view.php', $data); 
+
+
+
    }
 }
 
