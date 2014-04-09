@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title align="center">New Post</title>
+	
 	<title><?php echo $title; ?></title>
 
 </head>
@@ -15,7 +15,13 @@
 
    <p><?php echo $row->text ?></p>
 
+
+<p><?php echo anchor('blog/comments/'.$row->id, 
+   'Comments'); ?></p>
+
    <hr />
+
+      
 
 <?php endforeach; ?>
 
