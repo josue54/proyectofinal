@@ -21,11 +21,6 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
-
-	public function error() 
-	{
-		echo "Error 404, try again later";
-	}
 }
 
 /* End of file welcome.php */
