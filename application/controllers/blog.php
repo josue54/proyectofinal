@@ -1,6 +1,6 @@
 <?php 
 
-class Blog extends Controller {
+class Blog extends CI_Controller {
    function index()
    {
       echo "hey!";
