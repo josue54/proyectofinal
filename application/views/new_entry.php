@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8">
-        <title align="center">New Post</title>
+        <title align="center">New entry</title>
               
 </head>
 <body background="back.jpg">
