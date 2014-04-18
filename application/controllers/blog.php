@@ -33,7 +33,8 @@ class Blog extends CI_Controller {
 
 function comment_insert(){
 
-$this->db->insert('comments', $_POST);
+
+$this->blog_model->insert_comment('comments', $_POST);
 redirect('blog/comments/'.$_POST['entry_id']);
 }
 

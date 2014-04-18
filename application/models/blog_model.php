@@ -6,4 +6,12 @@ class Blog_model extends CI_Model {
 	public function insert($table, $data){
 		return $this->db->insert($table, $data);
 	}
+
+
+   public function insert_comment($table, $data){
+		return $this->db->insert($table, $data);
+	}
+
+
+
 }
