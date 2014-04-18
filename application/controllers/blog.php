@@ -4,17 +4,14 @@ class Blog extends CI_Controller {
 
  public function __construct(){
                 parent::__construct();
-                $this->load->model('blog_model');              
+                $this->load->model('blog_model');
+                $this->load->model('blogger_model');                  
         }
 
    function index()
    {
     
-      $data['title'] = "Blog";
-
-      $data['h1'] = "Welcome to my blog!";
-
-      $data['list'] = array('first', 'second', 'third');
+      
 
       $data['query'] = $this->db->get('entries');
 
@@ -53,6 +50,21 @@ public function insert_entry(){
 public function entry(){
                 $this->load->view('new_entry');
         }
+
+
+
+public function load_profile(){
+$data['query'] = $this->blogger_model->get_data();
+$this->load->view('bloggerProfile_view.php', $data);
+
+}
+
+
+
+
+
+
+
 
 }
 

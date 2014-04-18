@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title align="center">Blogger Profile</title>
 
 <style type="text/css">
 
@@ -62,7 +63,7 @@
   }
   </style>
 
-
+  
 	<?php
       echo anchor(base_url().'index.php/blog/entry/', 'New Entry');
       echo ' | ';
@@ -80,13 +81,19 @@
 <?php if (isset($query)) { ?>
   <?php foreach($query->result() as $row): ?>
 
-   <h3><?php echo $row->title ?></h3>
+   <h3 align="center">Informacion del Blogger</h3>
 
-   <p><?php echo $row->text ?></p>
+   <h3 align="center">Nombre:<?php echo $row->nombre ?></h3>
 
+   <h3 align="center">Email:<?php echo $row->email ?></h3>
 
-<p><?php echo anchor('blog/comments/'.$row->id, 
-   'Comments'); ?></p>
+   <p align="center"><a a href="<?php echo $row->facebook ?>">Facebook de Josue</a></p> 
+
+   <h3 align="center">Hobbies:<?php echo $row->hobbies ?></h3>
+
+   <h3 align="center">Nombre del Blog:<?php echo $row->blog_name ?></h3>
+
+   <h3 align="center">Detalles del Blog:<?php echo $row->detalles ?></h3>
 
    <hr />
 
