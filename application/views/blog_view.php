@@ -13,6 +13,7 @@
 
 	<ol>
 
+<?php if (isset($query)) { ?>
   <?php foreach($query->result() as $row): ?>
 
    <h3><?php echo $row->title ?></h3>
@@ -28,6 +29,7 @@
       
 
 <?php endforeach; ?>
+<?php }?>
 
 </ol>
 
