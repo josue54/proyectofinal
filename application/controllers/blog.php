@@ -5,7 +5,8 @@ class Blog extends CI_Controller {
  public function __construct(){
                 parent::__construct();
                 $this->load->model('blog_model');
-                $this->load->model('blogger_model');                  
+                $this->load->model('blogger_model');
+                $this->load->model('user_model');                   
         }
 
    function index()

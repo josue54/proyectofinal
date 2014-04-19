@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title align="center">Blogger Edition</title>
 
 <style type="text/css">
 
@@ -62,7 +63,7 @@
   }
   </style>
 
-
+  
 	<?php
       echo anchor(base_url().'index.php/blog/entry/', 'New Entry');
       echo ' | ';
@@ -72,24 +73,6 @@
    ?>
 	<title><?php echo $title; ?></title>
 
-<div id="container">
-    
-      <?php echo form_open('user/autenticate'); ?>
-      <!-- Username -->
-      <label for="name">Username:</label>
-      <input type="text" name="username">
-      <!-- Password -->
-      <label for="username">Password:</label>
-     <input type="text" name="password">
-      <div id="lower">
-        <!-- Submit Button -->
-        <input type="submit" value="Login">
-      </div>
-     
-  </div>
-
-  
-
 </head>
 <body>
 
@@ -98,13 +81,21 @@
 <?php if (isset($query)) { ?>
   <?php foreach($query->result() as $row): ?>
 
-   <h3><?php echo $row->title ?></h3>
+   <h3 align="center">Edicion De Mis Datos</h3>
 
-   <p><?php echo $row->text ?></p>
+   <input align="middle" type="text"     value=<?php echo $row->id ?> name="nombre">
 
+   <input align="middle" type="text"     value=<?php echo $row->nombre ?> name="nombre">
 
-<p><?php echo anchor('blog/comments/'.$row->id, 
-   'Comments'); ?></p>
+   <input align="middle" type="text"     value=<?php echo $row->email ?> name="nombre">
+
+   <input align="middle" type="text"     value=<?php echo $row->facebook ?> name="nombre">
+
+   <input align="middle" type="text"     value=<?php echo $row->hobbies ?> name="nombre">
+
+   <input align="middle" type="text"     value=<?php echo $row->blog_name ?> name="nombre">
+
+   <input align="middle" type="text"     value=<?php echo $row->detalles ?> name="nombre">
 
    <hr />
 
