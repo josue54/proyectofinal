@@ -95,7 +95,7 @@
 
    <input align="middle" type="text"     value=<?php echo $row->blog_name ?> name="nombre">
 
-   <input align="middle" type="text"     value=<?php echo $row->detalles ?> name="nombre">
+   <textarea align="center" name="comentarios" rows="10" cols="40"> <?php echo $row->detalles ?></textarea>
 
    <hr />
 
