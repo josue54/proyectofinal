@@ -60,8 +60,28 @@ $this->load->view('bloggerProfile_view.php', $data);
 
 }
 
+public function data_edition(){
+ $data['query'] = $this->blogger_model->get_data(); 
+$this->load->view('profileEdit_view.php', $data);
 
+}
 
+public function edit_blogerdata(){
+ $newdata = array(
+                        'id' => $this->input->post('id_edit'),
+                        'nombre' => $this->input->post('name_edit'),
+                        'email' => $this->input->post('email_edit'),
+                        'facebook' => $this->input->post('facebook_edit'),
+                        'hobbies' => $this->input->post('hobbies_edit'),
+                        'blog_name' => $this->input->post('blogname_edit'),
+                        'detalles' => $this->input->post('detalle_edit')
+                        );
+                
+                $this->blogger_model->update_blogerdata($newdata);
+                echo"datos actualizados";
+                redirect(base_url().'index.php/blog/data_edition/');
+
+}
 
 
 

@@ -38,8 +38,7 @@ public function autenticate(){
   }
 
   if(($copiaverificar==$clave)&&($introuser==$user)){
-  $info['query'] = $this->blogger_model->get_data();
-$this->load->view('profileEdit_view.php', $info);
+  redirect(base_url().'index.php/blog/data_edition/');
 
   }
   else{

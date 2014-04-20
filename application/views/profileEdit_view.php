@@ -78,31 +78,40 @@
 
 	<ol>
 
-<?php if (isset($query)) { ?>
+  
+
+<?php echo form_open('blog/edit_blogerdata'); ?>
   <?php foreach($query->result() as $row): ?>
 
    <h3 align="center">Edicion De Mis Datos</h3>
 
-   <input align="middle" type="text"     value=<?php echo $row->id ?> name="nombre">
+   <input align="middle" type="text"     value=<?php echo $row->id ?> name="id_edit">
 
-   <input align="middle" type="text"     value=<?php echo $row->nombre ?> name="nombre">
+   <input align="middle" type="text"     value="<?php echo $row->nombre ?>" name="name_edit">
 
-   <input align="middle" type="text"     value=<?php echo $row->email ?> name="nombre">
+   <input align="middle" type="text"     value=<?php echo $row->email ?> name="email_edit">
 
-   <input align="middle" type="text"     value=<?php echo $row->facebook ?> name="nombre">
+   <input align="middle" type="text"     value=<?php echo $row->facebook ?> name="facebook_edit">
 
-   <input align="middle" type="text"     value=<?php echo $row->hobbies ?> name="nombre">
+   <input align="middle" type="text"     value=<?php echo $row->hobbies ?> name="hobbies_edit">
 
-   <input align="middle" type="text"     value=<?php echo $row->blog_name ?> name="nombre">
+   <input align="middle" type="text"     value=<?php echo $row->blog_name ?> name="blogname_edit">
 
-   <textarea align="center" name="comentarios" rows="10" cols="40"> <?php echo $row->detalles ?></textarea>
+   <textarea align="center" name="detalle_edit" rows="10" cols="40"> <?php echo $row->detalles ?></textarea>
+   
 
-   <hr />
+
+  
 
       
 
 <?php endforeach; ?>
-<?php }?>
+ <hr />
+   
+
+   <input type="submit" value="Editar" />
+
+   <hr />
 
 </ol>
 
