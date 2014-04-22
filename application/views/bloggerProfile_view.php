@@ -81,7 +81,7 @@
 <?php if (isset($query)) { ?>
   <?php foreach($query->result() as $row): ?>
 
-   <h3 align="center">Informacion del Blogger</h3>
+   <h3 align="center">Bloger Information</h3>
 
    <h3 align="center">Nombre:<?php echo $row->nombre ?></h3>
 

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title align="center">Blogger Edition</title>
 
 <style type="text/css">
 
@@ -63,7 +62,7 @@
   }
   </style>
 
-  
+
 	<?php
       echo anchor(base_url().'index.php/blog/entry/', 'New Entry');
       echo ' | ';
@@ -73,59 +72,37 @@
    ?>
 	<title><?php echo $title; ?></title>
 
+
+
+  
+
 </head>
 <body>
 
 	<ol>
 
-  
-
-<?php echo form_open('blog/edit_blogerdata'); ?>
+<?php if (isset($query)) { ?>
   <?php foreach($query->result() as $row): ?>
 
-   <h3 align="center">Data Edition</h3>
+   <h3><?php echo $row->title ?></h3>
 
-   <input align="middle" type="text"     value=<?php echo $row->id ?> name="id_edit">
-
-   <input align="middle" type="text"     value="<?php echo $row->nombre ?>" name="name_edit">
-
-   <input align="middle" type="text"     value=<?php echo $row->email ?> name="email_edit">
-
-   <input align="middle" type="text"     value=<?php echo $row->facebook ?> name="facebook_edit">
-
-   <input align="middle" type="text"     value=<?php echo $row->hobbies ?> name="hobbies_edit">
-
-   <input align="middle" type="text"     value=<?php echo $row->blog_name ?> name="blogname_edit">
-
-   <textarea align="center" name="detalle_edit" rows="10" cols="40"> <?php echo $row->detalles ?></textarea>
-   
+   <p><?php echo $row->text ?></p>
 
 
-  
+<?php echo anchor('blog/commentstodelete/'.$row->id, 
+   'Comments'); 
+    echo ' | ';
+echo anchor(base_url().'index.php/blog/load_profile/', 'Profile');
+
+   ?>
+
+
+   <hr />
 
       
 
 <?php endforeach; ?>
- <hr />
-   
-
-   <input type="submit" value="Editar" />
-
-   <hr />
-
-   <?php
-      echo anchor(base_url().'index.php/blog/editentries/', 'Manage posts and comments');
-      
-   ?>
- 
-
-   <hr />
-
-      
-
-
-
-
+<?php }?>
 
 </ol>
 
