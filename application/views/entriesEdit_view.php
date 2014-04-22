@@ -92,7 +92,7 @@
 <?php echo anchor('blog/commentstodelete/'.$row->id, 
    'Comments'); 
     echo ' | ';
-echo anchor(base_url().'index.php/blog/load_profile/', 'Profile');
+echo anchor(base_url().'index.php/blog/deletepost/'.$row->id, 'Delete Entry');
 
    ?>
 
